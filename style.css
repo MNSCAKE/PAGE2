@@ -1,3 +1,6 @@
+/* ==============================
+   1. RESET (Meyer’s Reset)
+   ============================== */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -7,117 +10,235 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
+  font-family: 'Roboto', 'Noto Sans TC', sans-serif;
 }
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
 blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+q:before, q:after { content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+* { box-sizing: border-box; }
 
-* {
-    box-sizing: border-box;
-}
-
-a{
-    text-decoration: none;
-    color: black;
-}
-
-body {
+/* ==============================
+   2. BASE (Mobile First)
+   ============================== */
+.container {
   max-width: 100%;
+  padding: 1rem;
   margin: 0 auto;
 }
 
-.header{
-    display: flex;
-	justify-content: center;
-    align-items: center;
-	height: 90px;
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4.5rem; /* 72px */
 }
 
-.menu{
-    display: flex;
+.menu {
+  display: flex;
+  gap: 1.5rem;    /* 24px */
 }
 
-.menu li a {
-  display: block;
-  padding: 0 12px; /* 左右各 12px 的內距 */
-  line-height: 90px; /* 如果要讓連結撐滿 header 高度，也可調整行高 */
+.menu a {
+  font-size: 1.25rem;  /* 20px */
+  font-weight: 700;
+  text-decoration: none;
+  color: #000;
+  padding: 0.25rem;
 }
 
-.menu li a:hover {
-  background: blue;
-  color: white;
+.menu a:hover { color: #007bff; }
+.menu a:active { color: #dc3545; }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
+.left img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 
 .banner {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;  /* 或直接省略這行，預設就是 start */
-  gap: 24px;                     /* 圖片和文字間距 */
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.banner-img img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .banner-text {
-  text-align: left;             /* 文字左對齊 */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;  /* 段落間隔 */
+  text-align: left;
 }
 
-.box{
-    background-color: blue;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 20px;
-    margin-left: 15px;
+.banner-text .time {
+  font-size: 0.875rem; /* 14px */
+  color: #000;
 }
 
-.title0{
-    font-size: 16px;
-    letter-spacing: 0.1px;
-    color:  blue;
-    
-    padding-bottom: 6px;
-
+.banner-text .title0 {
+  font-size: 1.75rem; /* 28px */
+  font-weight: 700;
+  color: #000;
 }
 
-.title1{
-font-size: 18px;
-font-weight: 800;
-color:  black;
+.banner-text .tag {
+  font-size: 1rem; /* 16px */
+  color: #007bff;
+  font-weight: 600;
 }
 
-.banner-text p {
-  margin-bottom: 12px; /* 每個 p 底部留 12px 間距，可依需求調整 */
+.banner-text .title1 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 700;
+  color: #000;
+}
+
+/* 內容區 (Examples) */
+.content {
+  display: inline-block;
+  width: 100%;
+  margin: 1.25rem 0; /* 上下 20px */
+}
+
+.content img {
+  width: 100%;
+  height: auto;
+}
+
+.time { margin-bottom: 0.25rem; }
+.tag  { margin-bottom: 0.5rem; }
+
+/* 卡片按鈕 */
+.content a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid #4b4b4b;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #4b4b4b;
+  transition: background .3s, color .3s;
+}
+
+.content a:hover {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+/* .box 範例 */
+.box {
+  display: inline-block;
+  padding: 0.3125rem 0.625rem; /* 5px 10px */
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 1.25rem; /* 20px */
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Pagination */
+.pagination-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.pagination-body a {
+  display: block;
+  width: 3.75rem;       /* 60px */
+  padding: 1rem 0;      /* 上下 16px */
+  text-align: center;
+  font-size: 1.25rem;   /* 20px */
+  color: #3F5D45;
+  border: 1px solid #EAF0ED;
+  border-radius: 0.25rem;
+  transition: background .3s, color .3s;
+}
+.pagination-body a:hover {
+  background-color: #EAF0ED;
+}
+.pagination-body .active a {
+  background-color: #3F5D45;
+  color: #EAF0ED;
+}
+
+/* ==============================
+   3. BREAKPOINT @768px (Tablet)
+   ============================== */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .main {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .left, .right {
+    flex: 1;
+  }
+
+  .banner {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .banner-text .title0 {
+    font-size: 2.5rem; /* 40px */
+  }
+  .banner-text .title1 {
+    font-size: 1.5rem; /* 24px */
+  }
+}
+
+/* ==============================
+   4. BREAKPOINT @992px (Desktop)
+   ============================== */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .menu a {
+    font-size: 1.5rem; /* 24px */
+  }
+
+  .banner-text .title0 {
+    font-size: 3.125rem; /* 50px */
+  }
+  .banner-text .title1 {
+    font-size: 2rem;     /* 32px */
+  }
 }
