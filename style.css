@@ -1,3 +1,4 @@
+/* style.css */
 /* ==============================
    1. RESET (Meyer’s Reset)
    ============================== */
@@ -64,7 +65,6 @@ table { border-collapse: collapse; border-spacing: 0; }
   color: #000;
   padding: 0.25rem;
 }
-
 .menu a:hover { color: #007bff; }
 .menu a:active { color: #dc3545; }
 
@@ -95,78 +95,32 @@ table { border-collapse: collapse; border-spacing: 0; }
 .banner-text {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;  /* 段落間隔 */
+  gap: 0.75rem;         /* 段落間隔 */
   text-align: left;
+  padding: 0 1rem;      /* base：左右各留 1rem */
 }
 
 .banner-text .time {
-  font-size: 0.875rem; /* 14px */
+  font-size: 0.875rem;  /* 14px */
   color: #000;
 }
-
 .banner-text .title0 {
-  font-size: 1.75rem; /* 28px */
+  font-size: 1.75rem;   /* 28px */
   font-weight: 700;
   color: #000;
 }
-
 .banner-text .tag {
-  font-size: 1rem; /* 16px */
+  font-size: 1rem;      /* 16px */
   color: #007bff;
   font-weight: 600;
 }
-
 .banner-text .title1 {
-  font-size: 1.25rem; /* 20px */
+  font-size: 1.25rem;   /* 20px */
   font-weight: 700;
   color: #000;
 }
 
-/* 內容區 (Examples) */
-.content {
-  display: inline-block;
-  width: 100%;
-  margin: 1.25rem 0; /* 上下 20px */
-}
-
-.content img {
-  width: 100%;
-  height: auto;
-}
-
-.time { margin-bottom: 0.25rem; }
-.tag  { margin-bottom: 0.5rem; }
-
-/* 卡片按鈕 */
-.content a {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border: 1px solid #4b4b4b;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 1rem;
-  color: #4b4b4b;
-  transition: background .3s, color .3s;
-}
-
-.content a:hover {
-  background-color: #007bff;
-  color: #fff;
-  border-color: #007bff;
-}
-
-/* .box 範例 */
-.box {
-  display: inline-block;
-  padding: 0.3125rem 0.625rem; /* 5px 10px */
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 1.25rem; /* 20px */
-  font-size: 1rem;
-  text-align: center;
-}
-
-/* Pagination */
+/* Pagination 範例 */
 .pagination-body {
   display: flex;
   flex-wrap: wrap;
@@ -199,28 +153,23 @@ table { border-collapse: collapse; border-spacing: 0; }
   .container {
     max-width: 720px;
   }
-
   .main {
     flex-direction: row;
     gap: 2rem;
   }
-
   .left, .right {
     flex: 1;
   }
-
   .banner {
     flex-direction: row;
     align-items: center;
     gap: 2rem;
   }
-
-  .banner-text .title0 {
-    font-size: 2.5rem; /* 40px */
+  .banner-text {
+    padding: 0 2rem;  /* tablet：左右各留 2rem */
   }
-  .banner-text .title1 {
-    font-size: 1.5rem; /* 24px */
-  }
+  .banner-text .title0 { font-size: 2.5rem; /* 40px */ }
+  .banner-text .title1 { font-size: 1.5rem; /* 24px */ }
 }
 
 /* ==============================
@@ -230,15 +179,12 @@ table { border-collapse: collapse; border-spacing: 0; }
   .container {
     max-width: 960px;
   }
-
   .menu a {
     font-size: 1.5rem; /* 24px */
   }
-
-  .banner-text .title0 {
-    font-size: 3.125rem; /* 50px */
+  .banner-text {
+    padding: 0 4rem;  /* desktop：左右各留 4rem */
   }
-  .banner-text .title1 {
-    font-size: 2rem;     /* 32px */
-  }
+  .banner-text .title0 { font-size: 3.125rem; /* 50px */ }
+  .banner-text .title1 { font-size: 2rem;     /* 32px */ }
 }
